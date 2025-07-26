@@ -48,7 +48,11 @@ CSRF_COOKIE_SAMESITE = "Strict"
 CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", default="", cast=lambda v: [s.strip() for s in v.split(",")])
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", default="", cast=lambda v: [s.strip() for s in v.split(",")])
+CORS_ALLOWED_ORIGINS = [
+    "https://booksmandala.tezhni.com",
+    "https://www.booksmandala.tezhni.com",
+    "https://api.tezhni.com"
+]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
     "DELETE",
@@ -248,9 +252,3 @@ LOGGING = {
     },
 }
 
-# Performance Settings
-# DATA_UPLOAD_MAX_MEMORY_SIZE = config("DATA_UPLOAD_MAX_MEMORY_SIZE", default=5242880, cast=int)  # 5MB
-# FILE_UPLOAD_MAX_MEMORY_SIZE = config("FILE_UPLOAD_MAX_MEMORY_SIZE", default=5242880, cast=int)  # 5MB
-
-# Health Check (if using django-health-check)
-# INSTALLED_APPS += ['health_check', 'health_check.db', 'health_check.cache']
