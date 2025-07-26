@@ -20,7 +20,7 @@ export default function ISBNBookSearch() {
     try {
       // Using your Django API endpoint
       const response = await fetch(
-        `http://localhost:8000/api/book-info/?isbn=${isbn.trim()}`
+        `https://api.tezhni.com/api/book-info/?isbn=${isbn.trim()}`
       );
       
       if (!response.ok) {
